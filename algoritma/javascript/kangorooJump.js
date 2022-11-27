@@ -1,33 +1,31 @@
-function kangaroo({ x1, v1, x2, v2 }) {
+function kangaroo(x1, v1, x2, v2) {
     // Write your code here
-    // menghitung jarak setiap lompatan kangoroo 1
+
     let jauhLompatanKangorooPertama = x1;
     let jauhLompatanKangorooKedua = x2;
-    let langkahKangorooPertama = v1;
-    let langkahKangorooKedua = v2;
+    let value = "NO";
 
-    if (jauhLompatanKangorooPertama < jauhLompatanKangorooKedua && langkahKangorooPertama < langkahKangorooKedua) {
-        return "NO";
+    if (x1 < x2 && v1 < v2) {
+        console.log(value);
     } else {
-        for (let i = 0; i < Infinity; i++) {
-
+        for (var i = 0; i < 10000; i++) {
+            jauhLompatanKangorooPertama += v1;
+            jauhLompatanKangorooKedua += v2;
             if (jauhLompatanKangorooPertama == jauhLompatanKangorooKedua) {
-                return "YES";
+                value = "YES";
                 break;
             }
             if (jauhLompatanKangorooPertama > jauhLompatanKangorooKedua) {
                 break;
             }
-            jauhLompatanKangorooPertama += v1;
-            jauhLompatanKangorooKedua += v2;
+
         }
     }
-    return "YES";
+    console.log(value);
 }
-
 kangaroo({
-    x1: 0, // titik awal kangoroo pertama
+    x1: 43, // titik awal kangoroo pertama
     v1: 2, // lompatan kangoroo pertama
-    x2: 5, // titik awal kangoroo kedua
-    v2: 3, // lompatan kangoroo kedua
+    x2: 70, // titik awal kangoroo kedua
+    v2: 2, // lompatan kangoroo kedua
 });
